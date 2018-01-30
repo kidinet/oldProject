@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseFirst.BloggingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BloggingContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInGroups" EntityType="DatabaseFirst.BloggingModel.UserInGroup" />
+    <EntitySet Name="Users" EntityType="DatabaseFirst.BloggingModel.User" />
+    <EntitySet Name="Groups" EntityType="DatabaseFirst.BloggingModel.Group" />
+    <EntitySet Name="abouts" EntityType="DatabaseFirst.BloggingModel.about" />
+    <EntitySet Name="AdministratorSettings" EntityType="DatabaseFirst.BloggingModel.AdministratorSetting" />
+    <EntitySet Name="formDilemmas" EntityType="DatabaseFirst.BloggingModel.formDilemma" />
+    <EntitySet Name="formResponses" EntityType="DatabaseFirst.BloggingModel.formResponse" />
+    <EntitySet Name="imageGalleries" EntityType="DatabaseFirst.BloggingModel.imageGallery" />
+    <EntitySet Name="reminders" EntityType="DatabaseFirst.BloggingModel.reminder" />
+    <EntitySet Name="topMessages" EntityType="DatabaseFirst.BloggingModel.topMessage" />
+    <EntitySet Name="responseImages" EntityType="DatabaseFirst.BloggingModel.responseImage" />
+    <AssociationSet Name="FK__Administra__mail__46B27FE2" Association="DatabaseFirst.BloggingModel.FK__Administra__mail__46B27FE2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AdministratorSetting" EntitySet="AdministratorSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__formRespo__dilem__531856C7" Association="DatabaseFirst.BloggingModel.FK__formRespo__dilem__531856C7">
+      <End Role="formDilemma" EntitySet="formDilemmas" />
+      <End Role="formResponse" EntitySet="formResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__imageGall__group__498EEC8D" Association="DatabaseFirst.BloggingModel.FK__imageGall__group__498EEC8D">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="imageGallery" EntitySet="imageGalleries" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reminder__groupI__56E8E7AB" Association="DatabaseFirst.BloggingModel.FK__reminder__groupI__56E8E7AB">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="reminder" EntitySet="reminders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__topMessag__group__59C55456" Association="DatabaseFirst.BloggingModel.FK__topMessag__group__59C55456">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="topMessage" EntitySet="topMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInGro__group__43D61337" Association="DatabaseFirst.BloggingModel.FK__UserInGro__group__43D61337">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="UserInGroup" EntitySet="UserInGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK__responseI__image__4C6B5938" Association="DatabaseFirst.BloggingModel.FK__responseI__image__4C6B5938">
+      <End Role="imageGallery" EntitySet="imageGalleries" />
+      <End Role="responseImage" EntitySet="responseImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reminder__userMa__55F4C372" Association="DatabaseFirst.BloggingModel.FK__reminder__userMa__55F4C372">
+      <End Role="User" EntitySet="Users" />
+      <End Role="reminder" EntitySet="reminders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInGro__userM__42E1EEFE" Association="DatabaseFirst.BloggingModel.FK__UserInGro__userM__42E1EEFE">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserInGroup" EntitySet="UserInGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK__responseI__userM__4B7734FF" Association="DatabaseFirst.BloggingModel.FK__responseI__userM__4B7734FF">
+      <End Role="User" EntitySet="Users" />
+      <End Role="responseImage" EntitySet="responseImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__about__groupId__5CA1C101" Association="DatabaseFirst.BloggingModel.FK__about__groupId__5CA1C101">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="about" EntitySet="abouts" />
+    </AssociationSet>
+    <EntitySet Name="chatItems" EntityType="DatabaseFirst.BloggingModel.chatItem" />
+    <EntitySet Name="imageInThisWeekTitles" EntityType="DatabaseFirst.BloggingModel.imageInThisWeekTitle" />
+    <EntitySet Name="thisWeekTitles" EntityType="DatabaseFirst.BloggingModel.thisWeekTitle" />
+    <AssociationSet Name="FK__chatItem__userMa__756D6ECB" Association="DatabaseFirst.BloggingModel.FK__chatItem__userMa__756D6ECB">
+      <End Role="User" EntitySet="Users" />
+      <End Role="chatItem" EntitySet="chatItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__thisWeekT__group__625A9A57" Association="DatabaseFirst.BloggingModel.FK__thisWeekT__group__625A9A57">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="thisWeekTitle" EntitySet="thisWeekTitles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__imageInTh__thisW__65370702" Association="DatabaseFirst.BloggingModel.FK__imageInTh__thisW__65370702">
+      <End Role="thisWeekTitle" EntitySet="thisWeekTitles" />
+      <End Role="imageInThisWeekTitle" EntitySet="imageInThisWeekTitles" />
+    </AssociationSet>
+    <EntitySet Name="mainAboutTitles" EntityType="DatabaseFirst.BloggingModel.mainAboutTitle" />
+    <AssociationSet Name="FK__mainAbout__group__0880433F" Association="DatabaseFirst.BloggingModel.FK__mainAbout__group__0880433F">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="mainAboutTitle" EntitySet="mainAboutTitles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInGroup">
+    <Key>
+      <PropertyRef Name="userMail" />
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="userMail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="isAdministrator" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__UserInGro__group__43D61337" FromRole="UserInGroup" ToRole="Group" />
+    <NavigationProperty Name="User" Relationship="DatabaseFirst.BloggingModel.FK__UserInGro__userM__42E1EEFE" FromRole="UserInGroup" ToRole="User" />
+    <Property Name="childFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="childLastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="mail" />
+    </Key>
+    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="profile_" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="mail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password_" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="streat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="build" Type="Int32" />
+    <Property Name="latitute" Type="Double" />
+    <Property Name="longitude" Type="Double" />
+    <NavigationProperty Name="AdministratorSetting" Relationship="DatabaseFirst.BloggingModel.FK__Administra__mail__46B27FE2" FromRole="User" ToRole="AdministratorSetting" />
+    <NavigationProperty Name="reminders" Relationship="DatabaseFirst.BloggingModel.FK__reminder__userMa__55F4C372" FromRole="User" ToRole="reminder" />
+    <NavigationProperty Name="UserInGroups" Relationship="DatabaseFirst.BloggingModel.FK__UserInGro__userM__42E1EEFE" FromRole="User" ToRole="UserInGroup" />
+    <NavigationProperty Name="responseImage" Relationship="DatabaseFirst.BloggingModel.FK__responseI__userM__4B7734FF" FromRole="User" ToRole="responseImage" />
+    <NavigationProperty Name="chatItems" Relationship="DatabaseFirst.BloggingModel.FK__chatItem__userMa__756D6ECB" FromRole="User" ToRole="chatItem" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="streat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="build" Type="Int32" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fax" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="imageGalleries" Relationship="DatabaseFirst.BloggingModel.FK__imageGall__group__498EEC8D" FromRole="Group" ToRole="imageGallery" />
+    <NavigationProperty Name="reminders" Relationship="DatabaseFirst.BloggingModel.FK__reminder__groupI__56E8E7AB" FromRole="Group" ToRole="reminder" />
+    <NavigationProperty Name="topMessages" Relationship="DatabaseFirst.BloggingModel.FK__topMessag__group__59C55456" FromRole="Group" ToRole="topMessage" />
+    <NavigationProperty Name="UserInGroups" Relationship="DatabaseFirst.BloggingModel.FK__UserInGro__group__43D61337" FromRole="Group" ToRole="UserInGroup" />
+    <NavigationProperty Name="abouts" Relationship="DatabaseFirst.BloggingModel.FK__about__groupId__5CA1C101" FromRole="Group" ToRole="about" />
+    <NavigationProperty Name="thisWeekTitles" Relationship="DatabaseFirst.BloggingModel.FK__thisWeekT__group__625A9A57" FromRole="Group" ToRole="thisWeekTitle" />
+    <NavigationProperty Name="mainAboutTitles" Relationship="DatabaseFirst.BloggingModel.FK__mainAbout__group__0880433F" FromRole="Group" ToRole="mainAboutTitle" />
+  </EntityType>
+  <EntityType Name="about">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="groupId" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__about__groupId__5CA1C101" FromRole="about" ToRole="Group" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AdministratorSetting">
+    <Key>
+      <PropertyRef Name="mail" />
+    </Key>
+    <Property Name="mail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chatStart" Type="DateTime" Precision="0" />
+    <Property Name="chatEnd" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="User" Relationship="DatabaseFirst.BloggingModel.FK__Administra__mail__46B27FE2" FromRole="AdministratorSetting" ToRole="User" />
+  </EntityType>
+  <EntityType Name="formDilemma">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="formResponses" Relationship="DatabaseFirst.BloggingModel.FK__formRespo__dilem__531856C7" FromRole="formDilemma" ToRole="formResponse" />
+  </EntityType>
+  <EntityType Name="formResponse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dilemmaId" Type="Int32" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="formDilemma" Relationship="DatabaseFirst.BloggingModel.FK__formRespo__dilem__531856C7" FromRole="formResponse" ToRole="formDilemma" />
+  </EntityType>
+  <EntityType Name="imageGallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="src" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__imageGall__group__498EEC8D" FromRole="imageGallery" ToRole="Group" />
+    <NavigationProperty Name="responseImages" Relationship="DatabaseFirst.BloggingModel.FK__responseI__image__4C6B5938" FromRole="imageGallery" ToRole="responseImage" />
+  </EntityType>
+  <EntityType Name="reminder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userMail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="isRead" Type="Boolean" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__reminder__groupI__56E8E7AB" FromRole="reminder" ToRole="Group" />
+    <NavigationProperty Name="User" Relationship="DatabaseFirst.BloggingModel.FK__reminder__userMa__55F4C372" FromRole="reminder" ToRole="User" />
+  </EntityType>
+  <EntityType Name="topMessage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__topMessag__group__59C55456" FromRole="topMessage" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="responseImage">
+    <Key>
+      <PropertyRef Name="userMail" />
+    </Key>
+    <Property Name="imageId" Type="Int32" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="userMail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="imageGallery" Relationship="DatabaseFirst.BloggingModel.FK__responseI__image__4C6B5938" FromRole="responseImage" ToRole="imageGallery" />
+    <NavigationProperty Name="User" Relationship="DatabaseFirst.BloggingModel.FK__responseI__userM__4B7734FF" FromRole="responseImage" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__Administra__mail__46B27FE2">
+    <End Type="DatabaseFirst.BloggingModel.User" Role="User" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.AdministratorSetting" Role="AdministratorSetting" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="AdministratorSetting">
+        <PropertyRef Name="mail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__formRespo__dilem__531856C7">
+    <End Type="DatabaseFirst.BloggingModel.formDilemma" Role="formDilemma" Multiplicity="0..1" />
+    <End Type="DatabaseFirst.BloggingModel.formResponse" Role="formResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="formDilemma">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="formResponse">
+        <PropertyRef Name="dilemmaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__imageGall__group__498EEC8D">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.imageGallery" Role="imageGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="imageGallery">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reminder__groupI__56E8E7AB">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.reminder" Role="reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reminder">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__topMessag__group__59C55456">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.topMessage" Role="topMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="topMessage">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInGro__group__43D61337">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.UserInGroup" Role="UserInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserInGroup">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__responseI__image__4C6B5938">
+    <End Type="DatabaseFirst.BloggingModel.imageGallery" Role="imageGallery" Multiplicity="0..1" />
+    <End Type="DatabaseFirst.BloggingModel.responseImage" Role="responseImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="imageGallery">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="responseImage">
+        <PropertyRef Name="imageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reminder__userMa__55F4C372">
+    <End Type="DatabaseFirst.BloggingModel.User" Role="User" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.reminder" Role="reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="reminder">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInGro__userM__42E1EEFE">
+    <End Type="DatabaseFirst.BloggingModel.User" Role="User" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.UserInGroup" Role="UserInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="UserInGroup">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__responseI__userM__4B7734FF">
+    <End Type="DatabaseFirst.BloggingModel.User" Role="User" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.responseImage" Role="responseImage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="responseImage">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__about__groupId__5CA1C101">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="DatabaseFirst.BloggingModel.about" Role="about" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="about">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="chatItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userMail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="DatabaseFirst.BloggingModel.FK__chatItem__userMa__756D6ECB" FromRole="chatItem" ToRole="User" />
+  </EntityType>
+  <EntityType Name="imageInThisWeekTitle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="thisWeekTitleId" Type="Int32" />
+    <Property Name="src" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="thisWeekTitle" Relationship="DatabaseFirst.BloggingModel.FK__imageInTh__thisW__65370702" FromRole="imageInThisWeekTitle" ToRole="thisWeekTitle" />
+  </EntityType>
+  <EntityType Name="thisWeekTitle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="groupId" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__thisWeekT__group__625A9A57" FromRole="thisWeekTitle" ToRole="Group" />
+    <NavigationProperty Name="imageInThisWeekTitles" Relationship="DatabaseFirst.BloggingModel.FK__imageInTh__thisW__65370702" FromRole="thisWeekTitle" ToRole="imageInThisWeekTitle" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__chatItem__userMa__756D6ECB">
+    <End Type="DatabaseFirst.BloggingModel.User" Role="User" Multiplicity="1" />
+    <End Type="DatabaseFirst.BloggingModel.chatItem" Role="chatItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="chatItem">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__thisWeekT__group__625A9A57">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="DatabaseFirst.BloggingModel.thisWeekTitle" Role="thisWeekTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="thisWeekTitle">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__imageInTh__thisW__65370702">
+    <End Type="DatabaseFirst.BloggingModel.thisWeekTitle" Role="thisWeekTitle" Multiplicity="0..1" />
+    <End Type="DatabaseFirst.BloggingModel.imageInThisWeekTitle" Role="imageInThisWeekTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="thisWeekTitle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="imageInThisWeekTitle">
+        <PropertyRef Name="thisWeekTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mainAboutTitle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" />
+    <NavigationProperty Name="Group" Relationship="DatabaseFirst.BloggingModel.FK__mainAbout__group__0880433F" FromRole="mainAboutTitle" ToRole="Group" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__mainAbout__group__0880433F">
+    <End Type="DatabaseFirst.BloggingModel.Group" Role="Group" Multiplicity="0..1" />
+    <End Type="DatabaseFirst.BloggingModel.mainAboutTitle" Role="mainAboutTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mainAboutTitle">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
