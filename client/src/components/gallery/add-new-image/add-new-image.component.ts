@@ -20,6 +20,7 @@ export class AddNewImageComponent implements OnInit {
     }
 
     setImageSrc(e) {
+        console.log(e);
         this.imageSrc = e.target.value;
     }
 
