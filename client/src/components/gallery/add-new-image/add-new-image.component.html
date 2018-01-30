@@ -1,0 +1,16 @@
+<div class="add_new_image">
+    <input #fileInput [src]="imageSrc" (change)="setImageSrc($event)" type="file" name="file" id="file"
+           class="inputfile"/>
+    <label for="file">
+        <span> הוסף תמונה חדשה</span>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </label>
+    <mat-form-field class="subject">
+        <input matInput placeholder="נושא" [(ngModel)]="subject">
+    </mat-form-field>
+    <img [src]="imageSrc" #imageToCanvas>
+
+    <canvas #canvas></canvas>
+    <button mat-raised-button color="accent" (click)="createCanvasImage()">אישור</button>
+</div>
+

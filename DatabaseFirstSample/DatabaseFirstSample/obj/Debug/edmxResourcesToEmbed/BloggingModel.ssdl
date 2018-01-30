@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseFirst.BloggingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="about">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupId" Type="int" />
+    <Property Name="title" Type="varchar" MaxLength="30" />
+    <Property Name="content" Type="varchar(max)" />
+    <Property Name="icon" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AdministratorSettings">
+    <Key>
+      <PropertyRef Name="mail" />
+    </Key>
+    <Property Name="mail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="chatStart" Type="date" />
+    <Property Name="chatEnd" Type="date" />
+  </EntityType>
+  <EntityType Name="chatItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userMail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="text" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="formDilemma">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" />
+    <Property Name="content" Type="varchar(max)" />
+    <Property Name="date_added" Type="date" />
+  </EntityType>
+  <EntityType Name="formResponse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dilemmaId" Type="int" />
+    <Property Name="date_added" Type="date" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" />
+    <Property Name="city" Type="varchar" MaxLength="20" />
+    <Property Name="streat" Type="varchar" MaxLength="20" />
+    <Property Name="build" Type="int" />
+    <Property Name="phone" Type="varchar" MaxLength="10" />
+    <Property Name="mail" Type="varchar" MaxLength="100" />
+    <Property Name="fax" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="imageGallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="date_added" Type="date" />
+    <Property Name="src" Type="varbinary(max)" />
+    <Property Name="subject" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="imageInThisWeekTitle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="thisWeekTitleId" Type="int" />
+    <Property Name="src" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="mainAboutTitle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupId" Type="int" />
+    <Property Name="content" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="reminder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userMail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="text" Type="varchar" MaxLength="255" />
+    <Property Name="date" Type="date" />
+    <Property Name="isRead" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\PROJECT\SOLUTION\WEBAPI\APP_DATA\DATABASEFIRST.BLOGGING.MDF.dbo.responseImage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="responseImage">
+    <Key>
+      <PropertyRef Name="userMail" />
+    </Key>
+    <Property Name="imageId" Type="int" />
+    <Property Name="date_added" Type="date" />
+    <Property Name="text" Type="varchar" MaxLength="255" />
+    <Property Name="userMail" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="thisWeekTitle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="groupId" Type="int" />
+    <Property Name="title" Type="varchar" MaxLength="100" />
+    <Property Name="content" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="topMessage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="text" Type="varchar" MaxLength="255" />
+    <Property Name="date" Type="date" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInGroup">
+    <Key>
+      <PropertyRef Name="userMail" />
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="userMail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="groupId" Type="int" Nullable="false" />
+    <Property Name="isAdministrator" Type="bit" Nullable="false" />
+    <Property Name="childFirstName" Type="varchar" MaxLength="20" />
+    <Property Name="childLastName" Type="varchar" MaxLength="20" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="mail" />
+    </Key>
+    <Property Name="firstName" Type="varchar" MaxLength="20" />
+    <Property Name="lastName" Type="varchar" MaxLength="20" />
+    <Property Name="profile_" Type="varbinary(max)" />
+    <Property Name="mail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="password_" Type="varchar" MaxLength="30" />
+    <Property Name="city" Type="varchar" MaxLength="20" />
+    <Property Name="streat" Type="varchar" MaxLength="20" />
+    <Property Name="build" Type="int" />
+    <Property Name="latitute" Type="float" />
+    <Property Name="longitude" Type="float" />
+  </EntityType>
+  <Association Name="FK__about__groupId__0E391C95">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+    <End Role="about" Type="Self.about" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="about">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Administra__mail__46B27FE2">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="AdministratorSettings" Type="Self.AdministratorSettings" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="AdministratorSettings">
+        <PropertyRef Name="mail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chatItem__userMa__756D6ECB">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="chatItem" Type="Self.chatItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="chatItem">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__formRespo__dilem__531856C7">
+    <End Role="formDilemma" Type="Self.formDilemma" Multiplicity="0..1" />
+    <End Role="formResponse" Type="Self.formResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="formDilemma">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="formResponse">
+        <PropertyRef Name="dilemmaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__imageGall__group__498EEC8D">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="imageGallery" Type="Self.imageGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="imageGallery">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__imageInTh__thisW__65370702">
+    <End Role="thisWeekTitle" Type="Self.thisWeekTitle" Multiplicity="0..1" />
+    <End Role="imageInThisWeekTitle" Type="Self.imageInThisWeekTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="thisWeekTitle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="imageInThisWeekTitle">
+        <PropertyRef Name="thisWeekTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__mainAbout__group__0880433F">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+    <End Role="mainAboutTitle" Type="Self.mainAboutTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mainAboutTitle">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reminder__groupI__56E8E7AB">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="reminder" Type="Self.reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reminder">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reminder__userMa__55F4C372">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="reminder" Type="Self.reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="reminder">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__responseI__image__4C6B5938">
+    <End Role="imageGallery" Type="Self.imageGallery" Multiplicity="0..1" />
+    <End Role="responseImage" Type="Self.responseImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="imageGallery">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="responseImage">
+        <PropertyRef Name="imageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__responseI__userM__4B7734FF">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="responseImage" Type="Self.responseImage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="responseImage">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__thisWeekT__group__625A9A57">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+    <End Role="thisWeekTitle" Type="Self.thisWeekTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="thisWeekTitle">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__topMessag__group__59C55456">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="topMessage" Type="Self.topMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="topMessage">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInGro__group__43D61337">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="UserInGroup" Type="Self.UserInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserInGroup">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserInGro__userM__42E1EEFE">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserInGroup" Type="Self.UserInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="mail" />
+      </Principal>
+      <Dependent Role="UserInGroup">
+        <PropertyRef Name="userMail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseFirstBloggingModelStoreContainer">
+    <EntitySet Name="about" EntityType="Self.about" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdministratorSettings" EntityType="Self.AdministratorSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chatItem" EntityType="Self.chatItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="formDilemma" EntityType="Self.formDilemma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="formResponse" EntityType="Self.formResponse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="imageGallery" EntityType="Self.imageGallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="imageInThisWeekTitle" EntityType="Self.imageInThisWeekTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mainAboutTitle" EntityType="Self.mainAboutTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reminder" EntityType="Self.reminder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thisWeekTitle" EntityType="Self.thisWeekTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="topMessage" EntityType="Self.topMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInGroup" EntityType="Self.UserInGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="responseImage" EntityType="Self.responseImage" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [responseImage].[imageId] AS [imageId], 
+    [responseImage].[date_added] AS [date_added], 
+    [responseImage].[text] AS [text], 
+    [responseImage].[userMail] AS [userMail]
+    FROM [dbo].[responseImage] AS [responseImage]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__about__groupId__0E391C95" Association="Self.FK__about__groupId__0E391C95">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="about" EntitySet="about" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Administra__mail__46B27FE2" Association="Self.FK__Administra__mail__46B27FE2">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AdministratorSettings" EntitySet="AdministratorSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__chatItem__userMa__756D6ECB" Association="Self.FK__chatItem__userMa__756D6ECB">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="chatItem" EntitySet="chatItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__formRespo__dilem__531856C7" Association="Self.FK__formRespo__dilem__531856C7">
+      <End Role="formDilemma" EntitySet="formDilemma" />
+      <End Role="formResponse" EntitySet="formResponse" />
+    </AssociationSet>
+    <AssociationSet Name="FK__imageGall__group__498EEC8D" Association="Self.FK__imageGall__group__498EEC8D">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="imageGallery" EntitySet="imageGallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__imageInTh__thisW__65370702" Association="Self.FK__imageInTh__thisW__65370702">
+      <End Role="thisWeekTitle" EntitySet="thisWeekTitle" />
+      <End Role="imageInThisWeekTitle" EntitySet="imageInThisWeekTitle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__mainAbout__group__0880433F" Association="Self.FK__mainAbout__group__0880433F">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="mainAboutTitle" EntitySet="mainAboutTitle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reminder__groupI__56E8E7AB" Association="Self.FK__reminder__groupI__56E8E7AB">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="reminder" EntitySet="reminder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reminder__userMa__55F4C372" Association="Self.FK__reminder__userMa__55F4C372">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="reminder" EntitySet="reminder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__responseI__image__4C6B5938" Association="Self.FK__responseI__image__4C6B5938">
+      <End Role="imageGallery" EntitySet="imageGallery" />
+      <End Role="responseImage" EntitySet="responseImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__responseI__userM__4B7734FF" Association="Self.FK__responseI__userM__4B7734FF">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="responseImage" EntitySet="responseImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__thisWeekT__group__625A9A57" Association="Self.FK__thisWeekT__group__625A9A57">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="thisWeekTitle" EntitySet="thisWeekTitle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__topMessag__group__59C55456" Association="Self.FK__topMessag__group__59C55456">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="topMessage" EntitySet="topMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInGro__group__43D61337" Association="Self.FK__UserInGro__group__43D61337">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="UserInGroup" EntitySet="UserInGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserInGro__userM__42E1EEFE" Association="Self.FK__UserInGro__userM__42E1EEFE">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserInGroup" EntitySet="UserInGroup" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

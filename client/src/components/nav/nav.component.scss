@@ -1,0 +1,67 @@
+@import "../../assets/style/globalStyle";
+
+nav {
+  background-color: $second_color;
+  margin: 10px 0 0 0;
+  padding: 18px;
+  max-height: 64px;
+  a {
+    box-sizing: content-box;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    border-left: 1px solid $primary_color;
+    transition: 0.2s;
+    position: relative;
+    color: $primary_color;
+    cursor: pointer;
+    i {
+      padding: 0 10px 0 0;
+      transition: 0.2s;
+      vertical-align: middle;
+    }
+    &:active, &:focus, &:visited, &:hover {
+      color: $primary_color;
+      text-decoration: none;
+    }
+    &:last-child {
+      border-left: none;
+    }
+
+    .personal_area_nav {
+      transition: 0.3s;
+      position: absolute;
+      top: 45px;
+      right: 0;
+      height: 0;
+      width: 200px;
+      background-color: $primary_color;
+      text-align: right;
+      a {
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        display: block;
+        font-size: 22px;
+
+      }
+      i {
+        padding: 5px;
+      }
+    }
+  }
+  &.show {
+    a {
+      .personal_area_nav {
+        height: 125px;
+        a{
+          &:hover {
+            background-color: #459e96;
+          }
+        }
+
+      }
+    }
+
+  }
+}
