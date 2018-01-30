@@ -20,22 +20,33 @@ export class AddNewImageComponent implements OnInit {
     }
 
     setImageSrc(e) {
-        console.log(e);
-        this.imageSrc = e.target.value;
+        let oFReader = new FileReader();
+        oFReader.readAsDataURL(e.target.files[0]);
+        this.imageSrc = e.target.files[0];
+        oFReader.onload = (oFREvent)=> {
+            this.imageSrc = oFREvent.target['result'];
+        };
+     
     }
-
+  
 
     ngOnInit() {
-
+    
     }
 
-    createCanvasImage() {
-        var reader = new FileReader();
-        this.canvas.nativeElement.getContext("2d").drawImage(this.imageToCanvas.nativeElement, 10, 10)
-        let toDataURL = this.canvas.nativeElement.toDataURL().replace(/^data:image\/(png|jpg);base64,/, '');
-        this.apiService.addImageToGallery(toDataURL, this.subject);
-        this.dialogRef.close();
+    createCanvas(){
+        var c = this.canvas.nativeElement;
+        var context = c.getContext("2d");
+        var img = this.imageToCanvas.nativeElement;
+        context.drawImage(img,0,0,c.width,c.height);
+        this.imageSrc=c.toDataURL();
+    }
 
+    createImage() {
+        let toDataURL = this.imageSrc.replace(/^data:image\/(png|jpg);base64,/, '');
+        this.apiService.addImageToGallery(toDataURL, this.subject);
+       // this.dialogRef.close();
+       this.createCanvas();
     }
 
     // get imageSrc(){
