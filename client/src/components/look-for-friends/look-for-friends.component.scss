@@ -1,4 +1,15 @@
 @import "../../assets/style/globalStyle";
-agm-map {
-  height: 300px;
+
+.look_fom_friends {
+  padding: 30px;
+  font-size: 0;
+  agm-map {
+    height: 500px;
+  }
+  .asaid{
+    display: inline-block;
+    width: 180px;
+    height:50px;
+    background-color: #bce8f1;
+  }
 }
