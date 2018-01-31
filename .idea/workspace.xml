@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4ad010e-f26d-4db0-a961-2c2bb1641ab6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.spec.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project" afterPath="$PROJECT_DIR$/project" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.html" afterPath="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.scss" afterPath="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.ts" afterPath="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/header/header.component.ts" afterPath="$PROJECT_DIR$/client/src/components/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/nav/nav.component.html" afterPath="$PROJECT_DIR$/client/src/components/nav/nav.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.html" afterPath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.scss" afterPath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.ts" afterPath="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html" afterPath="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/welcome/welcome.component.ts" afterPath="$PROJECT_DIR$/client/src/components/welcome/welcome.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.scss" afterPath="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,28 +17,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add-new-image.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#85#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personal-area-settings.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="personal-area-settings.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personal-area-settings.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="personal-area-settings.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
@@ -93,11 +61,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="personal-area.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="personal-area.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal-area.component.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -174,11 +164,12 @@
         <option value="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.html" />
         <option value="$PROJECT_DIR$/project/client/src/services/api.service.ts" />
         <option value="$PROJECT_DIR$/client/src/components/gallery/add-new-image/add-new-image.component.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html" />
         <option value="$PROJECT_DIR$/client/src/components/welcome/welcome.component.ts" />
         <option value="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.scss" />
         <option value="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.ts" />
         <option value="$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.html" />
+        <option value="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html" />
+        <option value="$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.scss" />
       </list>
     </option>
   </component>
@@ -581,7 +572,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17619000" />
+    <option name="totallyTimeSpent" value="18337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -843,14 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/welcome/welcome.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-516">
@@ -889,10 +872,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area-settings/personal-area-settings.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/personal-area/personal-area.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
         </state>
       </provider>
