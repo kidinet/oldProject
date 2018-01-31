@@ -19,15 +19,20 @@
         <span>השבוע בגן</span>
         <i class="fa fa-calendar" aria-hidden="true"></i>
     </a>
-    <a routerLink="/home//presonal-area" routerLinkActive="active">
-        <span>הגדרות</span>
+    <span class="personal_area" (click)="toggleSettings()">
+         <span>הגדרות</span>
         <i class="fa fa-cog" aria-hidden="true"></i>
-        <!--<div class="personal_area_nav" >-->
-            <!--<a [routerLink]="['/home/presonal-area/settings']"> <i class="fa fa-cog" aria-hidden="true"></i>הגדרות</a>-->
-            <!--<a [routerLink]="['/home/presonal-area/remiders']"><i class="fa fa-bell" aria-hidden="true"></i>תזכורות-->
-                <!--חשובות</a>-->
-            <!--<a [routerLink]="['/home/presonal-area/chat']"><i class="fa fa-comments" aria-hidden="true"></i>chat</a>-->
-            <!--<router-outlet></router-outlet>-->
-        <!--</div>-->
-    </a>
+        <div class="settings_nav" [ngClass]="{'show': isPersonalAreaNavOpen}">
+            <span (click)="openPersonalSettings()">פרטים אישיים</span>
+            <span (click)="openConfirmPassword()">שנה סיסמא</span>
+        </div>
+    </span>
+
+    <!--<div class="personal_area_nav" >-->
+    <!--<a [routerLink]="['/home/presonal-area/settings']"> <i class="fa fa-cog" aria-hidden="true"></i>הגדרות</a>-->
+    <!--<a [routerLink]="['/home/presonal-area/remiders']"><i class="fa fa-bell" aria-hidden="true"></i>תזכורות-->
+    <!--חשובות</a>-->
+    <!--<a [routerLink]="['/home/presonal-area/chat']"><i class="fa fa-comments" aria-hidden="true"></i>chat</a>-->
+    <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
 </nav>

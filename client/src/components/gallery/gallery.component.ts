@@ -15,7 +15,7 @@ export class GalleryComponent implements OnInit {
 
     constructor(
         private apiService: ApiService,
-        public addNewImageDialog: MatDialog,) {
+        public addNewImageDialog: MatDialog) {
     }
 
     sortFilters = [

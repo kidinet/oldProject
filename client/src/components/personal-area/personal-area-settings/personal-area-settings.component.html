@@ -13,8 +13,6 @@
         </mat-form-field>
         <div [hidden]="lastName.untouched||!lastName.hasError('required')">שדה נדרש</div>
     </div>
-
-
     <div class="input_wrapper">
         <mat-form-field class="input">
             <input matInput placeholder="שם  הילד" type="text" name="childfirstName" [formControl]="childfirstName">
@@ -68,7 +66,5 @@
         <div [hidden]="userMail.untouched||!userMail.hasError('required')">שדה נדרש</div>
         <div [hidden]="userMail.untouched||!userMail.hasError('validateMail')">כתובת המייל אינה בתבנית הנכונה</div>
     </div>
-
-
-    <button type="submit" color="accent" mat-raised-button class="new_group">עדכן</button>
+    <button type="submit" color="accent" [disabled]="createUserForm.invalid" mat-raised-button class="new_group">עדכן</button>
 </form>

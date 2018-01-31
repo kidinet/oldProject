@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {FormValidateService} from '../../../services/form-validate.service'
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 
 @Component({
     selector: 'app-personal-area-settings',
@@ -10,7 +11,9 @@ import {FormValidateService} from '../../../services/form-validate.service'
 export class PersonalAreaSettingsComponent implements OnInit {
 
     constructor(private builder: FormBuilder,
-                private formValidateService: FormValidateService) {
+                private formValidateService: FormValidateService,
+                public dialogRef: MatDialogRef<PersonalAreaSettingsComponent>,
+                @Inject(MAT_DIALOG_DATA) public data: any) {
     }
 
     // user for variables:
