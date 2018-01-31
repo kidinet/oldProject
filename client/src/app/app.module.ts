@@ -17,6 +17,7 @@ import {GroupService} from '../services/group.service';
 import {FormValidateService} from '../services/form-validate.service';
 import {ApiService} from '../services/api.service';
 import {CookieService} from 'ngx-cookie-service';
+import {ImagesService} from '../services/images.service'
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {CookieService} from 'ngx-cookie-service';
         GroupService,
         FormValidateService,
         CookieService,
+        ImagesService,
         ApiService],
     exports: [],
 

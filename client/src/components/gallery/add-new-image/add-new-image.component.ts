@@ -1,6 +1,7 @@
-import {Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild, AfterContentInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import {ApiService} from '../../../services/api.service'
+import {ApiService} from '../../../services/api.service';
+import {ImagesService} from '../../../services/images.service';
 
 @Component({
     selector: 'app-add-new-image',
@@ -12,45 +13,44 @@ export class AddNewImageComponent implements OnInit {
     @ViewChild('imageToCanvas') imageToCanvas
     @ViewChild('canvas') canvas;
     subject = '';
-    imageSrc = '../../../assets/images/kinder-garden/kinder-garden-8.jpg';
+    imageSrc = '';
+    isLoading = false;
+    resultMessage = ''
 
     constructor(public dialogRef: MatDialogRef<AddNewImageComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: any,
-                private apiService: ApiService) {
+                private apiService: ApiService,
+                public imagesService: ImagesService) {
     }
-
-    setImageSrc(e) {
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(e.target.files[0]);
-        this.imageSrc = e.target.files[0];
-        oFReader.onload = (oFREvent) => {
-            this.imageSrc = oFREvent.target['result'];
-        };
-
-    }
-
 
     ngOnInit() {
 
     }
 
-    createCanvas() {
-        var c = this.canvas.nativeElement;
-        var context = c.getContext("2d");
-        var img = this.imageToCanvas.nativeElement;
-        context.drawImage(img, 0, 0, c.width, c.height);
-        this.imageSrc = c.toDataURL();
+    setImageSrc(e) {
+        this.resultMessage = '';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(e.target.files[0]);
+        oFReader.onload = (oFREvent) => {
+            this.imageSrc = oFREvent.target['result'];
+        };
+        this.isLoading = true;
+        setTimeout(() => {
+            this.isLoading = false;
+            this.imageSrc = this.imagesService.createCanvas(this.canvas, this.imageSrc);
+        }, 50);
     }
 
     createImage() {
-        let toDataURL = this.imageSrc.replace(/^data:image\/(png|jpg);base64,/, '');
-        this.apiService.addImageToGallery(toDataURL, this.subject);
-        // this.dialogRef.close();
-        this.createCanvas();
+        const toDataURL = this.canvas.nativeElement.toDataURL().replace(/^data:image\/(png|jpg);base64,/, '');
+        this.isLoading = true;
+       /* this.apiService.addImageToGallery(toDataURL, this.subject).then(result => {
+            this.resultMessage = result.Success ? 'התמונה נוספה לאוסף התמונות שלך' : 'לא ניתך להוסיף תמונה זו';
+            this.isLoading = false;
+            const ctx = this.canvas.nativeElement.getContext('2d')
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
+        });*/
     }
 
-    // get imageSrc(){
-    //
-    //    return this.fileInput.nativeElement.value ? this.fileInput.value: '../../../assets/images/kinder-garden/kinder-garden-8.jpg';
-    // }
 }

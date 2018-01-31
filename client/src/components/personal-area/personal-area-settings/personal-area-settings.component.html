@@ -1,3 +1,74 @@
-<p>
-  personal-area-settings works!
-</p>
+<form [formGroup]="createUserForm" (ngSubmit)="updateUser()">
+    <h3>פרטים אישיים</h3>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="שם פרטי" type="text" name="firstName" [formControl]="firstName">
+        </mat-form-field>
+        <div [hidden]="firstName.untouched||!firstName.hasError('required')">שדה נדרש</div>
+    </div>
+
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="שם משפחה" type="text" name="lastName" [formControl]="lastName">
+        </mat-form-field>
+        <div [hidden]="lastName.untouched||!lastName.hasError('required')">שדה נדרש</div>
+    </div>
+
+
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="שם  הילד" type="text" name="childfirstName" [formControl]="childfirstName">
+        </mat-form-field>
+        <div [hidden]="childfirstName.untouched||!childfirstName.hasError('required')">שדה נדרש</div>
+    </div>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="שם משפחת הילד" type="text" name="childlastName" [formControl]="childlastName">
+        </mat-form-field>
+        <div [hidden]="childlastName.untouched||!childlastName.hasError('required')">שדה נדרש</div>
+    </div>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="כינוי" type="text" name="nickName" [formControl]="nickName">
+        </mat-form-field>
+        <div [hidden]="nickName.untouched">שדה נדרש</div>
+    </div>
+
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="עיר" type="text" name="userCity" [formControl]="userCity">
+        </mat-form-field>
+        <div [hidden]="userCity.untouched||!userCity.hasError('required')">שדה נדרש</div>
+    </div>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="רחוב" type="text" name="userStreet" [formControl]="userStreet">
+        </mat-form-field>
+        <div [hidden]="userStreet.untouched||!userStreet.hasError('required')">שדה נדרש</div>
+    </div>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="בנין" type="number" name="userBuild" [formControl]="userBuild">
+        </mat-form-field>
+        <div [hidden]="userBuild.untouched||!userBuild.hasError('required')">שדה נדרש</div>
+    </div>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="טלפון" type="text" name="userPhone" [formControl]="userPhone">
+        </mat-form-field>
+        <div [hidden]="userPhone.untouched||!userPhone.hasError('required')">שדה נדרש</div>
+        <div [hidden]="userPhone.untouched||!userPhone.hasError('validatePhone')">
+            הטלפון אינו בתבנית הנכונה
+        </div>
+    </div>
+    <div class="input_wrapper">
+        <mat-form-field class="input">
+            <input matInput placeholder="מייל" type="text" name="userMail" [formControl]="userMail">
+        </mat-form-field>
+        <div [hidden]="userMail.untouched||!userMail.hasError('required')">שדה נדרש</div>
+        <div [hidden]="userMail.untouched||!userMail.hasError('validateMail')">כתובת המייל אינה בתבנית הנכונה</div>
+    </div>
+
+
+    <button type="submit" color="accent" mat-raised-button class="new_group">עדכן</button>
+</form>

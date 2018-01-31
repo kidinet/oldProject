@@ -25,12 +25,12 @@ export class WelcomeComponent implements OnInit {
         let NewGroupDialogRef = this.newGroupDialog.open(NewGroup, {});
     }
 
-    password = new FormControl('', [Validators.required]);
-    mail = new FormControl('', this.FormValidateService.validateEmail)
+    password_ = new FormControl('', [Validators.required]);
+    mail_ = new FormControl('', this.FormValidateService.validateEmail)
     //form declare:
     loginForm = this.builder.group({
-        mail: this.mail,
-        password: this.password
+        mail: this.mail_,
+        password: this.password_
     });
 
 
@@ -134,7 +134,7 @@ export class NewGroup {
     createManager() {
         this.userService.creatUser(this.createUserForm.value, true).then(result => {
             if (result.Success) {
-               // appGlobalsService.currentUser = result.returnObject;
+                // appGlobalsService.currentUser = result.returnObject;
                 this.stepper.selectedIndex += 1;
             }
         });
