@@ -28,12 +28,77 @@ export class AddNewImageComponent implements OnInit {
     }
 
     setImageSrc(e) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        let oFReader = new FileReader();
+        oFReader.readAsDataURL(e.target.files[0]);
+        this.imageSrc = e.target.files[0];
+        oFReader.onload = (oFREvent)=> {
+            this.imageSrc = oFREvent.target['result'];
+        };
+     
+    }
+  
+
+    ngOnInit() {
+    
+    }
+
+    createCanvas(){
+        var c = this.canvas.nativeElement;
+        var context = c.getContext("2d");
+        var img = this.imageToCanvas.nativeElement;
+        context.drawImage(img,0,0,c.width,c.height);
+        this.imageSrc=c.toDataURL();
+=======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
+=======
         this.resultMessage = '';
+>>>>>>> 1f259a07baaa29f2b93360a007c60b83a2363708
         const oFReader = new FileReader();
         oFReader.readAsDataURL(e.target.files[0]);
         oFReader.onload = (oFREvent) => {
             this.imageSrc = oFREvent.target['result'];
         };
+<<<<<<< HEAD
+
+    }
+
+
+    ngOnInit() {
+
+    }
+
+    createCanvas() {
+        var c = this.canvas.nativeElement;
+        var context = c.getContext("2d");
+        var img = this.imageToCanvas.nativeElement;
+        context.drawImage(img, 0, 0, c.width, c.height);
+        this.imageSrc = c.toDataURL();
+<<<<<<< HEAD
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
+    }
+
+    createImage() {
+        let toDataURL = this.imageSrc.replace(/^data:image\/(png|jpg);base64,/, '');
+        this.apiService.addImageToGallery(toDataURL, this.subject);
+<<<<<<< HEAD
+        // this.dialogRef.close();
+        this.createCanvas();
+=======
+<<<<<<< HEAD
+       // this.dialogRef.close();
+       this.createCanvas();
+=======
+        // this.dialogRef.close();
+        this.createCanvas();
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
+=======
         this.isLoading = true;
         setTimeout(() => {
             this.isLoading = false;
@@ -51,6 +116,7 @@ export class AddNewImageComponent implements OnInit {
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
         });*/
+>>>>>>> 1f259a07baaa29f2b93360a007c60b83a2363708
     }
 
 }

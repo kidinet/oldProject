@@ -11,15 +11,39 @@ namespace DatabaseFirstSample
 {
     using System;
     using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     using System.Runtime.Serialization;
 
     [Serializable]
     [DataContract]
+<<<<<<< HEAD
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     public partial class Group
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Group()
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            this.abouts = new HashSet<about>();
+            this.formDilemmas = new HashSet<formDilemma>();
+            this.imageGalleries = new HashSet<imageGallery>();
+            this.reminders = new HashSet<reminder>();
+            this.thisWeekTitles = new HashSet<thisWeekTitle>();
+            this.topMessages = new HashSet<topMessage>();
+            this.UserInGroups = new HashSet<UserInGroup>();
+        }
+
+=======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
             this.imageGalleries = new HashSet<imageGallery>();
             this.reminders = new HashSet<reminder>();
             this.topMessages = new HashSet<topMessage>();
@@ -27,6 +51,10 @@ namespace DatabaseFirstSample
             this.abouts = new HashSet<about>();
             this.thisWeekTitles = new HashSet<thisWeekTitle>();
         }
+<<<<<<< HEAD
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
         public Group(string name, string city, string street, int build, string phone, string mail, string fax)
         {
             this.name = name;
@@ -44,6 +72,36 @@ namespace DatabaseFirstSample
             this.abouts = new HashSet<about>();
             this.thisWeekTitles = new HashSet<thisWeekTitle>();
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        public int id { get; set; }
+        public string name { get; set; }
+        public string city { get; set; }
+        public string streat { get; set; }
+        public Nullable<int> build { get; set; }
+        public string phone { get; set; }
+        public string mail { get; set; }
+        public string fax { get; set; }
+        public Nullable<double> latitute { get; set; }
+        public Nullable<double> longitude { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<about> abouts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<formDilemma> formDilemmas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<imageGallery> imageGalleries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reminder> reminders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<thisWeekTitle> thisWeekTitles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<topMessage> topMessages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserInGroup> UserInGroups { get; set; }
+=======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
 
         [DataMember]
         public int id { get; set; }
@@ -81,5 +139,9 @@ namespace DatabaseFirstSample
         public virtual ICollection<thisWeekTitle> thisWeekTitles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<mainAboutTitle> mainAboutTitles { get; set; }
+<<<<<<< HEAD
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     }
 }

@@ -14,6 +14,16 @@ namespace DatabaseFirstSample
     
     public partial class thisWeekTitle
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        public int id { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<int> groupId { get; set; }
+    
+        public virtual Group Group { get; set; }
+=======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public thisWeekTitle()
         {
@@ -29,5 +39,9 @@ namespace DatabaseFirstSample
         public virtual Group Group { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<imageInThisWeekTitle> imageInThisWeekTitles { get; set; }
+<<<<<<< HEAD
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     }
 }
