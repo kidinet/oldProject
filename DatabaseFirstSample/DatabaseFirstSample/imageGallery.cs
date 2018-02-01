@@ -18,6 +18,8 @@ namespace DatabaseFirstSample
         public imageGallery()
         {
             this.responseImages = new HashSet<responseImage>();
+            this.Users = new HashSet<User>();
+            this.LikeImages = new HashSet<LikeImage>();
         }
     
         public int id { get; set; }
@@ -29,5 +31,9 @@ namespace DatabaseFirstSample
         public virtual Group Group { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<responseImage> responseImages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LikeImage> LikeImages { get; set; }
     }
 }

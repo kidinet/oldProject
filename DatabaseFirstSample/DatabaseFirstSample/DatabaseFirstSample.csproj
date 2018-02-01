@@ -67,16 +67,16 @@
     <Compile Include="AdministratorSetting.cs">
       <DependentUpon>BloggingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BloggingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloggingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="bl_classes\Bl_Group.cs" />
     <Compile Include="BloggingModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BloggingModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BloggingModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="BloggingModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,10 +100,7 @@
     <Compile Include="imageGallery.cs">
       <DependentUpon>BloggingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="imageInThisWeekTitle.cs">
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mainAboutTitle.cs">
+    <Compile Include="LikeImage.cs">
       <DependentUpon>BloggingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
@@ -148,7 +145,6 @@
       <DependentUpon>BloggingModel.edmx</DependentUpon>
       <LastGenOutput>BloggingModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BloggingModel.edmx.sql" />
     <Content Include="BloggingModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BloggingModel.edmx</DependentUpon>

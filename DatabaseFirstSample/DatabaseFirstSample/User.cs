@@ -11,13 +11,18 @@ namespace DatabaseFirstSample
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    [Serializable]
-    [DataContract]
+    
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.chatItems = new HashSet<chatItem>();
+            this.reminders = new HashSet<reminder>();
+            this.UserInGroups = new HashSet<UserInGroup>();
+            this.imageGalleries = new HashSet<imageGallery>();
+            this.LikeImages = new HashSet<LikeImage>();
+        }
         public User()
         {
 
@@ -77,37 +82,29 @@ namespace DatabaseFirstSample
             //this.chatItems = new HashSet<chatItem>();
             //this.UserInGroups = new HashSet<UserInGroup>();
         }
-        [DataMember]
+
         public string firstName { get; set; }
         public string lastName { get; set; }
-        [DataMember]
         public byte[] profile_ { get; set; }
-        [DataMember]
         public string mail { get; set; }
-        [DataMember]
         public string password_ { get; set; }
-        [DataMember]
         public string city { get; set; }
-        [DataMember]
         public string streat { get; set; }
-        [DataMember]
         public Nullable<int> build { get; set; }
-        [DataMember]
         public Nullable<double> latitute { get; set; }
-        [DataMember]
         public Nullable<double> longitude { get; set; }
-        [DataMember]
+    
         public virtual AdministratorSetting AdministratorSetting { get; set; }
-        [DataMember]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reminder> reminders { get; set; }
-        [DataMember]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserInGroup> UserInGroups { get; set; }
-        [DataMember]
-        public virtual responseImage responseImage { get; set; }
-        [DataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<chatItem> chatItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reminder> reminders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserInGroup> UserInGroups { get; set; }
+        public virtual responseImage responseImage { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<imageGallery> imageGalleries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LikeImage> LikeImages { get; set; }
     }
 }
