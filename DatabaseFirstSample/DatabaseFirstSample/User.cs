@@ -12,18 +12,26 @@ namespace DatabaseFirstSample
     using System;
     using System.Collections.Generic;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     
 =======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     using System.Runtime.Serialization;
 
     [Serializable]
     [DataContract]
+<<<<<<< HEAD
+=======
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
             this.chatItems = new HashSet<chatItem>();
             this.reminders = new HashSet<reminder>();
@@ -35,6 +43,7 @@ namespace DatabaseFirstSample
         {
 =======
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
 
         }
         public User(string mail)
@@ -93,6 +102,8 @@ namespace DatabaseFirstSample
             //this.UserInGroups = new HashSet<UserInGroup>();
         }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -118,6 +129,7 @@ namespace DatabaseFirstSample
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LikeImage> LikeImages { get; set; }
 =======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
         [DataMember]
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -150,6 +162,9 @@ namespace DatabaseFirstSample
         [DataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<chatItem> chatItems { get; set; }
+<<<<<<< HEAD
+=======
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     }
 }

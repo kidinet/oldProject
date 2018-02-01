@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 ﻿CREATE TABLE [dbo].[LikeImages11111] (
     [ImageId]  INT           NOT NULL,
     [UserMail] VARCHAR (100) NOT NULL,
@@ -8,6 +10,7 @@
     FOREIGN KEY ([UserMail]) REFERENCES [dbo].[Users] ([mail])
 );
 =======
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
 ﻿create table thisWeekTitle(
 id int primary key identity (1000,1),
 [date] date,
@@ -27,5 +30,9 @@ userMail   VARCHAR (100)   NOT NULL,
 [date] date,
 [text] varchar(max),
 FOREIGN KEY (userMail) REFERENCES [dbo].Users ([mail])
+<<<<<<< HEAD
+)
+=======
 )
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
