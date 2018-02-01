@@ -1,7 +1,18 @@
 <div class="look_fom_friends">
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-map #gm [latitude]="lat" [longitude]="lng" [zoom]="16">
+        <!--<agm-marker (markerClick)="opneMarger(infoWindow)" [latitude]="lat" [longitude]="lng"></agm-marker>-->
+        <!--<agm-marker (markerClick)="opneMarger(infoWindow)" [latitude]="lat1" [longitude]="lng1"></agm-marker>-->
+        <!--<agm-info-window #infoWindow [latitude]="lat1" [longitude]="lng1">-->
+            <!--<strong>sssssssssssssssssssss</strong>-->
+        <!--</agm-info-window>-->
         <!--<agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>-->
+
+        <agm-marker *ngFor="let user of usersLocaltion" (markerClick)="opneMarger(infoWindow)" [latitude]="user.latitude" [longitude]="user.longitude"></agm-marker>
+        <agm-info-window #infoWindow *ngFor="let user of usersLocaltion" [latitude]="user.latitude" [longitude]="user.longitude">
+            <strong>sssssssssssssssssssss</strong>
+        </agm-info-window>
     </agm-map>
     <div class="asaid"></div>
 </div>
+
+

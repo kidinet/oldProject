@@ -9,9 +9,9 @@ import {ImageGallery} from '../entities/gallery/imageGallery';
 export let baseAppUrl = 'http://localhost:4200/';
 export let baseAPIUrl = 'http://localhost:7022/api/';
 
-export let currentGroup = new Group(123, 'הגן שלנו', 'בני ברק', 'רבי עקיבא', 222, '0606660000', 'g0504108130@gmail.com', '03-5555555');
-export let currentUser = new User();
-export let currentUserInGroup = new UserInGroup();
+export let currentGroup = new Group(123, 'הגן שלנו', 'בני ברק', 'רבי עקיבא', 12, '0606660000', 'g0504108130@gmail.com', '03-5555555');
+export let currentUser = new User('משה', 'ללללל', 'הרב בלוי', 'בני ברק', 12, '0504109999', 'g0504108130@gmail.com', null, '1234');
+export let currentUserInGroup = new UserInGroup('cDasd', 'aSDASda', 'דודו');
 
 
 export let aboutTitles: AboutTitle[] = [];
