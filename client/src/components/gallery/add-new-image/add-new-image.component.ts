@@ -21,6 +21,15 @@ export class AddNewImageComponent implements OnInit {
                 @Inject(MAT_DIALOG_DATA) public data: any,
                 private apiService: ApiService,
                 public imagesService: ImagesService) {
+<<<<<<< HEAD
+    }
+
+    setImageSrc(e) {
+
+
+
+
+=======
     }
 
     ngOnInit() {
@@ -32,6 +41,7 @@ export class AddNewImageComponent implements OnInit {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
         let oFReader = new FileReader();
         oFReader.readAsDataURL(e.target.files[0]);
         this.imageSrc = e.target.files[0];
@@ -46,6 +56,8 @@ export class AddNewImageComponent implements OnInit {
     
     }
 
+<<<<<<< HEAD
+=======
     createCanvas(){
         var c = this.canvas.nativeElement;
         var context = c.getContext("2d");
@@ -70,6 +82,7 @@ export class AddNewImageComponent implements OnInit {
     ngOnInit() {
 
     }
+>>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
 
     createCanvas() {
         var c = this.canvas.nativeElement;
@@ -79,13 +92,21 @@ export class AddNewImageComponent implements OnInit {
         this.imageSrc = c.toDataURL();
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
 >>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
+>>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
     }
 
     createImage() {
         let toDataURL = this.imageSrc.replace(/^data:image\/(png|jpg);base64,/, '');
         this.apiService.addImageToGallery(toDataURL, this.subject);
+<<<<<<< HEAD
+
+     
+
+=======
 <<<<<<< HEAD
         // this.dialogRef.close();
         this.createCanvas();
@@ -99,11 +120,14 @@ export class AddNewImageComponent implements OnInit {
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
 >>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
 =======
+>>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
         this.isLoading = true;
         setTimeout(() => {
             this.isLoading = false;
             this.imageSrc = this.imagesService.createCanvas(this.canvas, this.imageSrc);
         }, 50);
+<<<<<<< HEAD
+=======
     }
 
     createImage() {
@@ -117,6 +141,7 @@ export class AddNewImageComponent implements OnInit {
             ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
         });*/
 >>>>>>> 1f259a07baaa29f2b93360a007c60b83a2363708
+>>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
     }
 
 }
