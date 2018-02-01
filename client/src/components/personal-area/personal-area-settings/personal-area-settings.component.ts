@@ -45,11 +45,20 @@ export class PersonalAreaSettingsComponent implements OnInit {
         confirmPassword: this.confirmPassword
     });
 
+    createUserInGroupForm = this.builder.group({
+        childfirstName: this.childfirstName,
+        childlastName: this.childlastName,
+        nickName: this.nickName,
+    });
+
     ngOnInit() {
     }
 
     updateUser() {
         console.log(this.createUserForm.value);
+    }
+    updateUserInGroup() {
+        console.log(this.createUserInGroupForm.value);
     }
 
 }

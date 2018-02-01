@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';
-import {User} from '../entities/user';
+import {User} from '../entities/user/user';
 import * as appGlobalsService from '../store/app-globals';
 
 @Injectable()

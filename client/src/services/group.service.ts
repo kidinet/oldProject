@@ -7,19 +7,33 @@ import {Group} from '../entities/group';
 import * as appGlobalsService from '../store/app-globals';
 @Injectable()
 export class GroupService {
-    constructor(private http: HttpClient ) {
+    constructor(private http: HttpClient) {
     }
 
 
     createGroup(group: Group): any {
-        let url = appGlobalsService.baseAPIUrl + 'createGroup/he/true?name='
-            + group.groupName +
-            '&city=' + group.groupCity +
-            '&street=' + group.groupCity +
-            '&build=' + group.groupBuild +
-            '&phone=' + group.groupPhone +
-            '&mail=' + group.groupMail +
-            '&fax=' + group.groupFax;
+        const url = `${appGlobalsService.baseAPIUrl}createGroup/he/true?name='
+           ${group.groupName}
+            &city='${group.groupCity}
+            &street='${group.groupCity}
+            &build='${group.groupBuild}
+            &phone='${group.groupPhone}
+            &mail='${group.groupMail}
+            &fax='${group.groupFax}`
+        return this.http.get(url)
+            .toPromise();
+    }
+
+    updateGroup(group: Group): any {
+        const url = `${appGlobalsService.baseAPIUrl}updateGroup/he/true?
+             id=${group.groupId}
+            &name=${group.groupName}
+            &city=${group.groupCity}
+            &street=${group.groupCity}
+            &build=${group.groupBuild}
+            &phone=${group.groupPhone}
+            &mail='${group.groupMail}
+            &fax='${group.groupFax}`
         return this.http.get(url)
             .toPromise();
     }

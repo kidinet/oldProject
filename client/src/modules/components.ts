@@ -43,6 +43,8 @@ import {ChatComponent} from '../components/personal-area/chat/chat.component';
 import {PersonalAreaSettingsComponent} from '../components/personal-area/personal-area-settings/personal-area-settings.component';
 import {RemindersComponent} from '../components/personal-area/reminders/reminders.component';
 import {ConfirmPasswordComponent} from '../components/personal-area/confirm-password/confirm-password.component';
+import {GroupSettingsComponent } from '../components/personal-area/group-settings/group-settings.component';
+
 
 const routes: Routes = [
     {path: '', component: WelcomeComponent},
@@ -91,9 +93,10 @@ const routes: Routes = [
         PersonalAreaSettingsComponent,
         RemindersComponent,
         AddNewImageComponent,
-        ConfirmPasswordComponent
+        ConfirmPasswordComponent,
+        GroupSettingsComponent
     ],
-    entryComponents: [NewGroup, AddNewImageComponent, ConfirmPasswordComponent],
+    entryComponents: [NewGroup, AddNewImageComponent, ConfirmPasswordComponent,GroupSettingsComponent],
     imports: [
         RouterModule.forRoot(routes),
         BrowserModule,

@@ -1,11 +1,21 @@
-form {
-  width: 450px;
-  padding: 20px;
-  .input_wrapper {
-    display: block;
-    margin: 0 0 15px;
-    .input {
-      width: 100%;
+
+.personal_settings {
+  height: 620px;
+  position: relative;
+  form {
+    width: 450px;
+    padding: 20px;
+    .input_wrapper {
+      display: block;
+      margin: 0 0 15px;
+      .input {
+        width: 100%;
+      }
+    }
+    button {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
     }
   }
 }
