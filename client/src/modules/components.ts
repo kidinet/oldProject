@@ -19,14 +19,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from '../components/welcome/welcome.component';
 import {NewGroup} from '../components/welcome/welcome.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { AgmCoreModule } from '@agm/core';
-import { AgmDirectionModule } from 'agm-direction';
+import {AgmCoreModule} from '@agm/core';
+import {AgmDirectionModule} from 'agm-direction';
 
 //image gallery components:
 import {ImageGalleryComponent} from '../components/gallery/image-gallery/image-gallery.component'
 import {LikeComponentComponent} from '../components/gallery/image-gallery/like-component/like-component.component';
 import {ImageGalleryResponseComponent} from '../components/gallery/image-gallery-response/image-gallery-response.component'
-import { AddNewImageComponent } from '../components/gallery/add-new-image/add-new-image.component';
+import {AddNewImageComponent} from '../components/gallery/add-new-image/add-new-image.component';
 
 
 // form components:
@@ -39,9 +39,11 @@ import {AboutTitleComponent} from '../components/about/about-title/about-title.c
 import {AboutTitleStyleComponent} from '../components/about/about-title-style/about-title-style.component';
 
 // personal area components:
-import {ChatComponent} from '../components/personal-area/chat/chat.component'
-import {PersonalAreaSettingsComponent} from '../components/personal-area/personal-area-settings/personal-area-settings.component'
-import {RemindersComponent} from '../components/personal-area/reminders/reminders.component'
+import {ChatComponent} from '../components/personal-area/chat/chat.component';
+import {PersonalAreaSettingsComponent} from '../components/personal-area/personal-area-settings/personal-area-settings.component';
+import {RemindersComponent} from '../components/personal-area/reminders/reminders.component';
+import {ConfirmPasswordComponent} from '../components/personal-area/confirm-password/confirm-password.component';
+import {GroupSettingsComponent } from '../components/personal-area/group-settings/group-settings.component';
 
 
 const routes: Routes = [
@@ -90,9 +92,11 @@ const routes: Routes = [
         ChatComponent,
         PersonalAreaSettingsComponent,
         RemindersComponent,
-        AddNewImageComponent
+        AddNewImageComponent,
+        ConfirmPasswordComponent,
+        GroupSettingsComponent
     ],
-    entryComponents: [NewGroup,AddNewImageComponent],
+    entryComponents: [NewGroup, AddNewImageComponent, ConfirmPasswordComponent,GroupSettingsComponent],
     imports: [
         RouterModule.forRoot(routes),
         BrowserModule,

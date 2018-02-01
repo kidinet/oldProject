@@ -1,18 +1,55 @@
 <div class="add_new_image">
-    <input #fileInput [src]="imageSrc" (change)="setImageSrc($event)" type="file" name="file" id="file" class="inputfile" />
+    <i (click)="dialogRef.close()" class="fa fa-times" aria-hidden="true"></i>
+    <input #fileInput [src]="imageSrc" (change)="setImageSrc($event)" type="file" name="file" id="file"
+           class="inputfile"/>
     <label for="file">
-        <span> הוסף תמונה חדשה</span>
+        <span> בחר תמונה </span>
         <i class="fa fa-plus" aria-hidden="true"></i>
     </label>
     <mat-form-field class="subject">
         <input matInput placeholder="נושא" [(ngModel)]="subject">
     </mat-form-field>
+<<<<<<< HEAD
     <img [src]="imageSrc" #imageToCanvas>
     <canvas #canvas height="300"
+<<<<<<< HEAD
+            style="border:1px solid #d3d3d3;"></canvas>
+=======
 <<<<<<< HEAD
     style="border:1px solid #d3d3d3;"></canvas>
 =======
             style="border:1px solid #d3d3d3;"></canvas>
 >>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
+>>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
     <button mat-raised-button color="accent" (click)="createImage()">אישור</button>
+=======
+    <img [src]="imageSrc">
+    <div class="edit_wrappwr" *ngIf="imageSrc&&!isLoading">
+        <i class="fa fa-compress" aria-hidden="true" (click)="imagesService.scale(0.9,canvas,imageSrc)"></i>
+        <i class="fa fa-undo" aria-hidden="true" (click)="imagesService.rotate(-90,canvas,imageSrc)"></i>
+        <i class="fa fa-repeat" aria-hidden="true" (click)="imagesService.rotate(90,canvas,imageSrc)"></i>
+        <i class="fa fa-expand" aria-hidden="true" (click)="imagesService.scale(1.1,canvas,imageSrc)"></i>
+    </div>
+    <div class="edit_wrappwr" *ngIf="imageSrc&&!isLoading">
+        <i class="fa fa-angle-double-down" aria-hidden="true"
+           (click)="imagesService.translate(0,5,canvas,imageSrc)"></i>
+        <i class="fa fa-angle-double-right" aria-hidden="true"
+           (click)="imagesService.translate(5,0,canvas,imageSrc)"></i>
+        <i class="fa fa-angle-double-up" aria-hidden="true" (click)="imagesService.translate(0,-5,canvas,imageSrc)"></i>
+        <i class="fa fa-angle-double-left" aria-hidden="true"
+           (click)="imagesService.translate(-5,0,canvas,imageSrc)"></i>
+    </div>
+    <div class="canvas_wrapper">
+        <canvas #canvas height="200" width="300"
+                style="border:1px solid #d3d3d3;" [ngClass]="{'blur':isLoading}">
+
+        </canvas>
+        <div class="spinner" *ngIf="isLoading">
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <h5>{{resultMessage}}</h5>
+    <button mat-raised-button color="accent" (click)="createImage()">הוסף</button>
+>>>>>>> 1f259a07baaa29f2b93360a007c60b83a2363708
 </div>
