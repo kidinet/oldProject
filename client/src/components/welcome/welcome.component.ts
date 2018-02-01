@@ -21,18 +21,17 @@ export class WelcomeComponent implements OnInit {
                 private FormValidateService: FormValidateService) {
     }
 
-    openNewGroupDialog(): void {
-        let NewGroupDialogRef = this.newGroupDialog.open(NewGroup, {});
-    }
-
-    password_ = new FormControl('', [Validators.required]);
-    mail_ = new FormControl('', this.FormValidateService.validateEmail)
-    //form declare:
+    password = new FormControl('', [Validators.required]);
+    mail = new FormControl('', this.FormValidateService.validateEmail)
+    // form declare:
     loginForm = this.builder.group({
-        mail: this.mail_,
-        password: this.password_
+        mail: this.mail,
+        password: this.password
     });
 
+    openNewGroupDialog(): void {
+        const NewGroupDialogRef = this.newGroupDialog.open(NewGroup, {});
+    }
 
     login() {
         console.log(this.loginForm.value);
@@ -121,11 +120,14 @@ export class NewGroup {
     }
 
     createGroup() {
+        this.groupService.createGroup(this.createGroupForm.value);
         this.groupService.createGroup(this.createGroupForm.value).then(result => {
             if (result.Success) {
-                //appGlobalsService.currentGroup = result.returnObject;
+                appGlobalsService.setGroup(result.returnObject);
                 this.stepper.selectedIndex += 1;
-            } else this.createGroupField = true;
+            } else {
+                this.createGroupField = true;
+            }
             this.isLoading = false;
         });
         this.isLoading = true;

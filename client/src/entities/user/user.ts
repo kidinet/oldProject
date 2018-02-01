@@ -8,7 +8,7 @@ export class User {
                 public mail?: string,
                 public profile?: string,
                 public password?: string,
-                public latitute?: number,
+                public latitude?: number,
                 public longitude?: number) {
     }
 }

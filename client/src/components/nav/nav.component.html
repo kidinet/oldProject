@@ -28,7 +28,7 @@
             <span (click)="openGroupSettings()">פרטי הגן</span>
         </div>
     </span>
-
+    <div class="fixed" *ngIf="isPersonalAreaNavOpen" (click)="toggleSettings()"></div>
     <!--<div class="personal_area_nav" >-->
     <!--<a [routerLink]="['/home/presonal-area/settings']"> <i class="fa fa-cog" aria-hidden="true"></i>הגדרות</a>-->
     <!--<a [routerLink]="['/home/presonal-area/remiders']"><i class="fa fa-bell" aria-hidden="true"></i>תזכורות-->

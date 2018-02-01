@@ -13,7 +13,7 @@ export class ConfirmPasswordComponent implements OnInit {
                 private builder: FormBuilder) {
     }
 
-    currentPassword = new FormControl('', Validators.required);
+    currentPassword = new FormControl('', this.formValidateService.validatePhone);
     newPassword = new FormControl('', Validators.required)
     confirmPassword = new FormControl('', this.formValidateService.confirmPassword(this.newPassword));
 
@@ -25,6 +25,7 @@ export class ConfirmPasswordComponent implements OnInit {
 
     ngOnInit() {
     }
+
     changePassword() {
         console.log(this.changePasswordForm.value);
     }
