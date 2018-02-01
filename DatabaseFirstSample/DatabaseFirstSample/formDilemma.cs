@@ -21,12 +21,18 @@ namespace DatabaseFirstSample
         }
     
         public int id { get; set; }
+<<<<<<< HEAD
         public Nullable<int> groupId { get; set; }
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
         public string title { get; set; }
         public string content { get; set; }
         public Nullable<System.DateTime> date_added { get; set; }
     
+<<<<<<< HEAD
         public virtual Group Group { get; set; }
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<formResponse> formResponses { get; set; }
     }

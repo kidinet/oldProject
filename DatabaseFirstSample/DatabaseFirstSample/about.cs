@@ -15,10 +15,17 @@ namespace DatabaseFirstSample
     public partial class about
     {
         public int id { get; set; }
+<<<<<<< HEAD
         public Nullable<int> groupId { get; set; }
         public string title { get; set; }
         public string icon { get; set; }
         public string color { get; set; }
+=======
+        public string title { get; set; }
+        public string icon { get; set; }
+        public Nullable<int> groupId { get; set; }
+        public string content { get; set; }
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     
         public virtual Group Group { get; set; }
     }

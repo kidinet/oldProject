@@ -25,6 +25,7 @@ namespace DatabaseFirstSample
             throw new UnintentionalCodeFirstException();
         }
     
+<<<<<<< HEAD
         public virtual DbSet<about> abouts { get; set; }
         public virtual DbSet<AdministratorSetting> AdministratorSettings { get; set; }
         public virtual DbSet<chatItem> chatItems { get; set; }
@@ -39,5 +40,22 @@ namespace DatabaseFirstSample
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<responseImage> responseImages { get; set; }
         public virtual DbSet<LikeImage> LikeImages1 { get; set; }
+=======
+        public virtual DbSet<UserInGroup> UserInGroups { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<about> abouts { get; set; }
+        public virtual DbSet<AdministratorSetting> AdministratorSettings { get; set; }
+        public virtual DbSet<formDilemma> formDilemmas { get; set; }
+        public virtual DbSet<formResponse> formResponses { get; set; }
+        public virtual DbSet<imageGallery> imageGalleries { get; set; }
+        public virtual DbSet<reminder> reminders { get; set; }
+        public virtual DbSet<topMessage> topMessages { get; set; }
+        public virtual DbSet<responseImage> responseImages { get; set; }
+        public virtual DbSet<chatItem> chatItems { get; set; }
+        public virtual DbSet<imageInThisWeekTitle> imageInThisWeekTitles { get; set; }
+        public virtual DbSet<thisWeekTitle> thisWeekTitles { get; set; }
+        public virtual DbSet<mainAboutTitle> mainAboutTitles { get; set; }
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     }
 }

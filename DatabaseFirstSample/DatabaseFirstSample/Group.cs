@@ -11,12 +11,20 @@ namespace DatabaseFirstSample
 {
     using System;
     using System.Collections.Generic;
+<<<<<<< HEAD
     
+=======
+    using System.Runtime.Serialization;
+
+    [Serializable]
+    [DataContract]
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     public partial class Group
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Group()
         {
+<<<<<<< HEAD
             this.abouts = new HashSet<about>();
             this.formDilemmas = new HashSet<formDilemma>();
             this.imageGalleries = new HashSet<imageGallery>();
@@ -26,6 +34,15 @@ namespace DatabaseFirstSample
             this.UserInGroups = new HashSet<UserInGroup>();
         }
 
+=======
+            this.imageGalleries = new HashSet<imageGallery>();
+            this.reminders = new HashSet<reminder>();
+            this.topMessages = new HashSet<topMessage>();
+            this.UserInGroups = new HashSet<UserInGroup>();
+            this.abouts = new HashSet<about>();
+            this.thisWeekTitles = new HashSet<thisWeekTitle>();
+        }
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
         public Group(string name, string city, string street, int build, string phone, string mail, string fax)
         {
             this.name = name;
@@ -43,6 +60,7 @@ namespace DatabaseFirstSample
             this.abouts = new HashSet<about>();
             this.thisWeekTitles = new HashSet<thisWeekTitle>();
         }
+<<<<<<< HEAD
         public int id { get; set; }
         public string name { get; set; }
         public string city { get; set; }
@@ -68,5 +86,44 @@ namespace DatabaseFirstSample
         public virtual ICollection<topMessage> topMessages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserInGroup> UserInGroups { get; set; }
+=======
+
+        [DataMember]
+        public int id { get; set; }
+        [DataMember]
+        public string name { get; set; }
+        [DataMember]
+        public string city { get; set; }
+        [DataMember]
+        public string streat { get; set; }
+        [DataMember]
+        public Nullable<int> build { get; set; }
+        [DataMember]
+        public string phone { get; set; }
+        [DataMember]
+        public string mail { get; set; }
+        [DataMember]
+        public string fax { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<imageGallery> imageGalleries { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reminder> reminders { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<topMessage> topMessages { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserInGroup> UserInGroups { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<about> abouts { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<thisWeekTitle> thisWeekTitles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<mainAboutTitle> mainAboutTitles { get; set; }
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     }
 }

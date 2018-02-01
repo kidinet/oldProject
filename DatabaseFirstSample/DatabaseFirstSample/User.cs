@@ -11,12 +11,20 @@ namespace DatabaseFirstSample
 {
     using System;
     using System.Collections.Generic;
+<<<<<<< HEAD
     
+=======
+    using System.Runtime.Serialization;
+
+    [Serializable]
+    [DataContract]
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+<<<<<<< HEAD
             this.chatItems = new HashSet<chatItem>();
             this.reminders = new HashSet<reminder>();
             this.UserInGroups = new HashSet<UserInGroup>();
@@ -25,6 +33,8 @@ namespace DatabaseFirstSample
         }
         public User()
         {
+=======
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
 
         }
         public User(string mail)
@@ -82,6 +92,7 @@ namespace DatabaseFirstSample
             //this.chatItems = new HashSet<chatItem>();
             //this.UserInGroups = new HashSet<UserInGroup>();
         }
+<<<<<<< HEAD
 
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -106,5 +117,39 @@ namespace DatabaseFirstSample
         public virtual ICollection<imageGallery> imageGalleries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LikeImage> LikeImages { get; set; }
+=======
+        [DataMember]
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        [DataMember]
+        public byte[] profile_ { get; set; }
+        [DataMember]
+        public string mail { get; set; }
+        [DataMember]
+        public string password_ { get; set; }
+        [DataMember]
+        public string city { get; set; }
+        [DataMember]
+        public string streat { get; set; }
+        [DataMember]
+        public Nullable<int> build { get; set; }
+        [DataMember]
+        public Nullable<double> latitute { get; set; }
+        [DataMember]
+        public Nullable<double> longitude { get; set; }
+        [DataMember]
+        public virtual AdministratorSetting AdministratorSetting { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reminder> reminders { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserInGroup> UserInGroups { get; set; }
+        [DataMember]
+        public virtual responseImage responseImage { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<chatItem> chatItems { get; set; }
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     }
 }

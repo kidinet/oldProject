@@ -14,10 +14,28 @@ namespace DatabaseFirstSample
     
     public partial class thisWeekTitle
     {
+<<<<<<< HEAD
         public int id { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<int> groupId { get; set; }
     
         public virtual Group Group { get; set; }
+=======
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public thisWeekTitle()
+        {
+            this.imageInThisWeekTitles = new HashSet<imageInThisWeekTitle>();
+        }
+    
+        public int id { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<int> groupId { get; set; }
+        public string title { get; set; }
+        public string content { get; set; }
+    
+        public virtual Group Group { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<imageInThisWeekTitle> imageInThisWeekTitles { get; set; }
+>>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
     }
 }
