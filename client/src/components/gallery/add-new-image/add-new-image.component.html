@@ -9,28 +9,11 @@
     <mat-form-field class="subject">
         <input matInput placeholder="נושא" [(ngModel)]="subject">
     </mat-form-field>
-<<<<<<< HEAD
 
     <img [src]="imageSrc" #imageToCanvas>
 
     <button mat-raised-button color="accent" (click)="createImage()">אישור</button>
 
-=======
-<<<<<<< HEAD
-    <img [src]="imageSrc" #imageToCanvas>
-    <canvas #canvas height="300"
-<<<<<<< HEAD
-            style="border:1px solid #d3d3d3;"></canvas>
-=======
-<<<<<<< HEAD
-    style="border:1px solid #d3d3d3;"></canvas>
-=======
-            style="border:1px solid #d3d3d3;"></canvas>
->>>>>>> 80086fcc5df8b4668ad26f755b2927e01d42c9c2
->>>>>>> 710ca7a32c33c7087359b3eab676d00da88e00fa
-    <button mat-raised-button color="accent" (click)="createImage()">אישור</button>
-=======
->>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
     <img [src]="imageSrc">
     <div class="edit_wrappwr" *ngIf="imageSrc&&!isLoading">
         <i class="fa fa-compress" aria-hidden="true" (click)="imagesService.scale(0.9,canvas,imageSrc)"></i>
@@ -59,8 +42,4 @@
     </div>
     <h5>{{resultMessage}}</h5>
     <button mat-raised-button color="accent" (click)="createImage()">הוסף</button>
-<<<<<<< HEAD
-=======
->>>>>>> 1f259a07baaa29f2b93360a007c60b83a2363708
->>>>>>> e8d63939b53e75abd69ca8cf7d8cd492f9ec89a2
 </div>
