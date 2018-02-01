@@ -13,7 +13,7 @@ export class ConfirmPasswordComponent implements OnInit {
                 private builder: FormBuilder) {
     }
 
-    currentPassword = new FormControl('', this.formValidateService.validatePhone);
+    currentPassword = new FormControl('', this.formValidateService.checkCurrentPassword);
     newPassword = new FormControl('', Validators.required)
     confirmPassword = new FormControl('', this.formValidateService.confirmPassword(this.newPassword));
 

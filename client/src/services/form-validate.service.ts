@@ -25,9 +25,10 @@ export class FormValidateService {
             }
         };
     }
+
     checkCurrentPassword(formControl: FormControl) {
-        const phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-        return phoneno.test(formControl.value) ? null : {
+        console.log(appGlobalsService.currentUser.password);
+        return appGlobalsService.currentUser.password === formControl.value ? null : {
             validatePhone: {
                 valid: false
             }
