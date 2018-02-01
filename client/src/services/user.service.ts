@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import {User} from '../entities/user/user';
 import * as appGlobalsService from '../store/app-globals';
 import {UserInGroup} from '../entities/user/UserInGroup';
+import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -14,6 +15,12 @@ export class UserService {
 
     API_KEY = 'AIzaSyAftTULF-1UvfWrffosDlIChTWfhN_EqRU'
     API_URL = `https://maps.googleapis.com/maps/api/geocode/json?key=${this.API_KEY}&address=`;
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': 'my-auth-token'
+        })
+    };
     dir = undefined;
 
     // =======================API==========================
@@ -75,6 +82,14 @@ export class UserService {
         &Rprogile=${profileData}`;
         return this.http.get(url)
             .toPromise();
+    }
+
+    updatePasseord(password): any {
+        const url = `${appGlobalsService.baseAPIUrl}updateProfileImage/he/true`
+        return this.http.post(url, {
+            mail: appGlobalsService.currentUser.mail,
+            password: password
+        }, this.httpOptions).pipe();
     }
 
     // =====================================================
